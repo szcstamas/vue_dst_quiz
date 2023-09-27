@@ -18,8 +18,8 @@ const router = createRouter({
       component: QuizViewOptionsFaded,
     },
     {
-      path: "/compositions",
-      name: "compositions",
+      path: "/composition",
+      name: "composition",
       component: QuizViewCompositionFaded,
     },
     // PROD
