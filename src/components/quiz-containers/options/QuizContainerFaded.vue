@@ -75,7 +75,6 @@ form {
   margin: auto;
 
   h4 {
-    font-size: 2rem;
     text-align: center;
   }
 
