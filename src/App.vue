@@ -1,16 +1,18 @@
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-      </nav>
-    </div>
-  </header>
-  <RouterView />
+  <site-header />
+  <main>
+    <router-view />
+  </main>
+  <site-footer />
 </template>
 
 <script>
-import { RouterLink, RouterView } from "vue-router";
+import SiteHeader from "@/components/site-header/SiteHeader.vue";
+import SiteFooter from "@/components/site-footer/SiteFooter.vue";
+
+export default {
+  components: { SiteHeader, SiteFooter },
+};
 </script>
 
 <style lang="scss">
@@ -22,6 +24,11 @@ import { RouterLink, RouterView } from "vue-router";
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  main {
+    min-height: 80vh;
+    padding-block: 2rem;
+  }
 }
 
 a,
@@ -29,18 +36,6 @@ p,
 span,
 ul {
   font-size: 16px;
-}
-
-header {
-  width: 100%;
-  padding-block: 2rem;
-  background-color: #efefef;
-  text-align: center;
-  margin-bottom: 2rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 a {
