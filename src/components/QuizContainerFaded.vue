@@ -3,13 +3,13 @@
     <h4>{{ actualQuestion }}</h4>
     <label
       v-for="(value, index) in actualObjectOfOptions"
-      :key="index"
+      :key="`The following number is the index of a label in our Quiz form: ${index}`"
       class="form-control"
       @click="makeOptionChoosen(value)"
     >
       <input
         type="radio"
-        v-model="selectedOption"
+        v-model="isOptionSelected"
         :value="value"
         name="radio"
       />
@@ -17,8 +17,8 @@
     </label>
     <input
       type="submit"
-      :disabled="!isOptionChoosen"
-      :class="{ disabled: !isOptionChoosen }"
+      :disabled="!isSubmitButtonEnabled"
+      :class="{ disabled: !isSubmitButtonEnabled }"
       @click="jumpToNextQuestionAndResetRadioButtons()"
       value="Next question"
     />
@@ -30,18 +30,18 @@ export default {
   props: ["questions", "indexOfQuestion"],
   data() {
     return {
-      selectedOption: null,
-      isOptionChoosen: false,
+      isOptionSelected: null,
+      isSubmitButtonEnabled: false,
     };
   },
   methods: {
     makeOptionChoosen(value) {
-      this.selectedOption = value;
-      this.isOptionChoosen = true;
+      this.isOptionSelected = value;
+      this.isSubmitButtonEnabled = true;
     },
     jumpToNextQuestionAndResetRadioButtons() {
-      this.isOptionChoosen = false;
-      this.selectedOption = null;
+      this.isSubmitButtonEnabled = false;
+      this.isOptionSelected = null;
       this.$emit("next-question");
     },
   },

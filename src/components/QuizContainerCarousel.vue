@@ -8,7 +8,7 @@
     >
       <input
         type="radio"
-        v-model="selectedOption"
+        v-model="isOptionSelected"
         :value="value"
         name="radio"
       />
