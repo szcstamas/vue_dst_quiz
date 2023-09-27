@@ -9,7 +9,8 @@ footer {
   width: 100%;
   min-height: 10vh;
   padding-block: 2rem;
-  background-color: #efefef;
+  background-color: #252525;
+  color: #fff;
   text-align: center;
 
   display: flex;

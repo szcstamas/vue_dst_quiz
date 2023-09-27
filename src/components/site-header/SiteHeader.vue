@@ -22,7 +22,8 @@
   width: 100%;
   min-height: 10vh;
   padding-block: 2rem;
-  background-color: #efefef;
+  color: #ffffff;
+  background-color: #252525;
   text-align: center;
 
   display: flex;
@@ -30,6 +31,10 @@
   align-items: center;
 
   &__nav {
+    a {
+      color: #fff;
+    }
+
     &__link-container {
       position: absolute;
       right: 10%;
@@ -55,7 +60,7 @@
         transform: translateY(0%);
         opacity: 0;
         visibility: hidden;
-        transition: all .25s ease-in-out;
+        transition: all 0.25s ease-in-out;
 
         display: flex;
         justify-content: center;
@@ -72,7 +77,7 @@
           white-space: nowrap;
 
           &:hover {
-            background-color: #343434; 
+            background-color: #343434;
           }
         }
       }

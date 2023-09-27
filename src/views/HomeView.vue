@@ -5,7 +5,7 @@
       <h1>Choose a project</h1>
       <div class="home-wrapper__button-container">
         <router-link to="/options">Options API</router-link>
-        <router-link to="/compositions">Compositions API</router-link>
+        <router-link to="/composition">Compositions API</router-link>
       </div>
     </div>
   </section>
