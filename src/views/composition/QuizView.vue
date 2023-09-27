@@ -15,7 +15,7 @@
 <script setup>
 import { ref } from "vue";
 import { useQuestionStore } from "@/stores/piniaStore";
-import QuizContainerFaded from "@/components/QuizContainerFaded.vue";
+import QuizContainerFaded from "@/components/composition/QuizContainerFaded.vue";
 import QuizContainerEnded from "@/components/QuizContainerEnded.vue";
 
 const store = useQuestionStore();

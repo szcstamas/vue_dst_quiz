@@ -14,7 +14,7 @@
 
 <script>
 import { ref } from "vue";
-import QuizContainerFaded from "@/components/QuizContainerFaded.vue";
+import QuizContainerFaded from "@/components/options/QuizContainerFaded.vue";
 import QuizContainerEnded from "@/components/QuizContainerEnded.vue";
 
 export default {
