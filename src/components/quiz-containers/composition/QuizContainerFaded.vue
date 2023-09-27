@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent>
-    <h4>{{ actualQuestion }}</h4>
+    <h1>{{ actualQuestion }}</h1>
     <label
       v-for="(value, index) in actualObjectOfOptions"
       :key="`The following number is the index of a label in our Quiz form: ${index}`"

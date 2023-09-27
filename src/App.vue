@@ -1,6 +1,16 @@
 <template>
   <site-header />
   <main>
+    <img
+      class="site-logo reign-of-giants"
+      src="@/assets/images/dont_starve_reign_of_giants_logo.webp"
+      alt="Don't Starve Reign Of Giants logo"
+    />
+    <img
+      class="site-logo together"
+      src="@/assets/images/dont_starve_together_logo.webp"
+      alt="Don't Starve Together logo"
+    />
     <div class="site-background">
       <img
         class="site-background__logo"
@@ -49,6 +59,33 @@ body {
     padding-block: 2rem;
     position: relative;
 
+    .site-logo {
+      position: absolute;
+      top: 0;
+      max-width: 200px;
+      animation: levitating 4s ease-in-out infinite;
+
+      @keyframes levitating {
+        0% {
+          transform: translateY(-5%);
+        }
+        50% {
+          transform: translateY(5%);
+        }
+        100% {
+          transform: translateY(-5%);
+        }
+      }
+    }
+
+    .reign-of-giants {
+      left: 30%;
+    }
+
+    .together {
+      right: 30%;
+    }
+
     section {
       width: 40%;
     }
@@ -96,6 +133,7 @@ h4,
 h5,
 h6 {
   font-family: "BelisaPlumilla", sans-serif;
+  letter-spacing: 1px;
 }
 
 h1 {

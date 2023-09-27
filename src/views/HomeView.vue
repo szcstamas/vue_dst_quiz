@@ -1,11 +1,9 @@
 <template>
   <section>
     <div class="home-wrapper">
-      <img class="home-wrapper__site-logo" src="@/assets/images/dont_starve_together_logo.webp" alt="Don't Starve Together logo">
-      <h1>Choose a project</h1>
+      <h1>Szia! Indulhat a játék?</h1>
       <div class="home-wrapper__button-container">
-        <router-link to="/options">Options API</router-link>
-        <router-link to="/composition">Compositions API</router-link>
+        <router-link to="/options">Igen-igen, kezdjük már!</router-link>
       </div>
     </div>
   </section>
@@ -21,19 +19,7 @@ export default {};
   flex-direction: column;
   gap: 2rem;
   text-align: center;
-
-  &__site-logo {
-    display: block;
-    max-width: 250px;
-    margin: auto;
-    animation: levitating 4s ease-in-out infinite;
-
-    @keyframes levitating {
-      0% { transform: translateY(-5%)}
-      50% { transform: translateY(5%)}
-      100% { transform: translateY(-5%)}
-    }
-  }
+  position: relative;
 
   &__button-container {
     display: flex;
@@ -41,14 +27,18 @@ export default {};
     align-items: center;
     gap: 2rem;
     width: 100%;
-    max-width: 1000px; 
+    max-width: 1000px;
     margin: auto;
 
     a {
       flex: 1;
       padding: 2rem;
       background-color: rgb(3, 94, 0);
-      font-size: 20px;
+      font-family: "BelisaPlumilla", sans-serif;
+      letter-spacing: 1px;
+      font-size: 54px;
+      max-width: 500px;
+      width: 100%;
       font-weight: bold;
       color: #fff;
       text-decoration: none;
