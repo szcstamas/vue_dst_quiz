@@ -6,7 +6,6 @@
       </nav>
     </div>
   </header>
-
   <RouterView />
 </template>
 
@@ -37,6 +36,7 @@ header {
   padding-block: 2rem;
   background-color: #efefef;
   text-align: center;
+  margin-bottom: 2rem;
 
   display: flex;
   justify-content: center;

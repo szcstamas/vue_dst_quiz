@@ -1,19 +1,25 @@
 <template>
   <form @submit.prevent>
-    <h4>{{ headlineOfContainer }}</h4>
+    <h4>{{ actualQuestion }}</h4>
     <label
-      v-for="value in actualObjectOfOptions"
+      v-for="(value, index) in actualObjectOfOptions"
+      :key="index"
       class="form-control"
-      @click="$emit('chooseOptionFunction')"
+      @click="makeOptionChoosen(value)"
     >
-      <input type="radio" v-model="choosenInput" :value="value" name="radio" />
+      <input
+        type="radio"
+        v-model="selectedOption"
+        :value="value"
+        name="radio"
+      />
       {{ value }}
     </label>
     <input
       type="submit"
       :disabled="!isOptionChoosen"
       :class="{ disabled: !isOptionChoosen }"
-      @click="$emit('nextQuestionFunction')"
+      @click="jumpToNextQuestionAndResetRadioButtons()"
       value="Next question"
     />
   </form>
@@ -21,16 +27,38 @@
 
 <script>
 export default {
-  props: {
-    headlineOfContainer: {
-      type: String,
-      required: true,
+  props: ["questions", "indexOfQuestion"],
+  data() {
+    return {
+      selectedOption: null,
+      isOptionChoosen: false,
+    };
+  },
+  methods: {
+    makeOptionChoosen(value) {
+      this.selectedOption = value;
+      this.isOptionChoosen = true;
     },
-    actualObjectOfOptions: {
-      type: Object,
-      required: true,
+    jumpToNextQuestionAndResetRadioButtons() {
+      this.isOptionChoosen = false;
+      this.selectedOption = null;
+      this.$emit("next-question");
     },
-    choosenInput,
+  },
+  computed: {
+    actualObjectOfOptions() {
+      const actualObject = this.questions[this.indexOfQuestion];
+      const [, ...restOfActualOptionKeyValuePairs] =
+        Object.entries(actualObject);
+      const everyKeyValuePairsExceptQuestionIntoObject = Object.fromEntries(
+        restOfActualOptionKeyValuePairs
+      );
+
+      return everyKeyValuePairsExceptQuestionIntoObject;
+    },
+    actualQuestion() {
+      return this.questions[this.indexOfQuestion].question;
+    },
   },
 };
 </script>
