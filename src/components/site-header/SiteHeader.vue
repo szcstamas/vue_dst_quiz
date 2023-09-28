@@ -52,7 +52,6 @@
         .header__nav__link-container__hidden-links {
           opacity: 1;
           visibility: visible;
-          transform: translateY(40%);
         }
       }
 
@@ -61,6 +60,9 @@
       }
 
       &__hidden-links {
+        padding: 1rem;
+        background-color: #343434;
+        border-radius: 20px;
         position: absolute;
         top: 50%;
         right: 18%;
@@ -84,7 +86,7 @@
           white-space: nowrap;
 
           &:hover {
-            background-color: #343434;
+            background-color: #1b1b1b;
           }
         }
       }

@@ -121,6 +121,7 @@ form {
 
   input[type="submit"].disabled {
     opacity: 50%;
+    background-color: #343434;
     cursor: not-allowed;
   }
 
@@ -131,8 +132,11 @@ form {
     font-size: 18px;
     font-weight: bold;
     color: #ffffff;
-    background-color: #343434;
+    background-color: rgb(3, 94, 0);
     padding: 1rem 2rem;
+    padding-top: 1.5rem;
+    font-family: "BelisaPlumilla", sans-serif;
+    font-size: 38px;
     border-radius: 10px;
     width: 100%;
     text-transform: uppercase;

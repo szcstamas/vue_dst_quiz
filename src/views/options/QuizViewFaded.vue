@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import { ref } from "vue";
 import QuizContainerFaded from "@/components/quiz-containers/options/QuizContainerFaded.vue";
 import QuizContainerEnded from "@/components/quiz-containers/QuizContainerEnded.vue";
+import { useQuestionStore } from "@/stores/piniaStore";
 
 export default {
   components: { QuizContainerEnded, QuizContainerFaded },
@@ -23,26 +23,6 @@ export default {
   data() {
     return {
       actualIndexOfQuestion: 0,
-      questions: [
-        {
-          question: "How am I?",
-          firstAnswer: "Very fine",
-          secondAnswer: "Not that fine",
-          thirdAnswer: "Awfully",
-        },
-        {
-          question: "Is the bus driver sucky?",
-          firstAnswer: "Yes",
-          secondAnswer: "Of course",
-          thirdAnswer: "Just as usual",
-        },
-        {
-          question: "Are there prolis?",
-          firstAnswer: "Yes",
-          secondAnswer: "Yes",
-          thirdAnswer: "Yes",
-        },
-      ],
     };
   },
 
@@ -52,13 +32,21 @@ export default {
       this.actualIndexOfQuestion++;
     },
   },
+
+  computed: {
+    questions() {
+      const store = useQuestionStore();
+      const questions = store.questions;
+      return questions;
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 section {
   padding-inline: 2rem;
-  padding-block: 3rem;
+  padding-block: 1rem 2rem;
 
   .wrapper {
     max-width: 1440px;
