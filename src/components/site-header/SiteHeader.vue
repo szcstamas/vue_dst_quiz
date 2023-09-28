@@ -1,18 +1,17 @@
 <template>
   <header class="header">
-    <div>
-      <nav class="header__nav">
-        <router-link to="/">Home</router-link>
-
-        <div class="header__nav__link-container">
-          <p>Show DEV options</p>
-          <div class="header__nav__link-container__hidden-links">
-            <router-link to="/options">Options API</router-link>
-            <router-link to="/composition">Composition API</router-link>
-          </div>
+    <nav class="header__nav">
+      <router-link to="/" class="header__nav__homepage-link"
+        >Don't Starve Quiz</router-link
+      >
+      <div class="header__nav__link-container">
+        <p>Show DEV options</p>
+        <div class="header__nav__link-container__hidden-links">
+          <router-link to="/options">Options API</router-link>
+          <router-link to="/composition">Composition API</router-link>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </header>
 </template>
 
@@ -21,7 +20,9 @@
   position: relative;
   width: 100%;
   min-height: 10vh;
+  height: 10vh;
   padding-block: 2rem;
+  padding-inline: 1rem;
   color: #ffffff;
   background-color: #252525;
   text-align: center;
@@ -31,16 +32,22 @@
   align-items: center;
 
   &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+
     a {
       color: #fff;
     }
 
-    &__link-container {
-      position: absolute;
-      right: 10%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+    &__homepage-link {
+      font-family: "BelisaPlumilla", sans-serif;
+      font-size: 38px;
+    }
 
+    &__link-container {
       &:hover {
         .header__nav__link-container__hidden-links {
           opacity: 1;
@@ -56,7 +63,7 @@
       &__hidden-links {
         position: absolute;
         top: 50%;
-        right: 0;
+        right: 18%;
         transform: translateY(0%);
         opacity: 0;
         visibility: hidden;
