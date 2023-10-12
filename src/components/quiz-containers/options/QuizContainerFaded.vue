@@ -123,6 +123,10 @@ form {
     opacity: 50%;
     background-color: #343434;
     cursor: not-allowed;
+
+    &:hover {
+      background-color: #343434;
+    }
   }
 
   input[type="submit"] {
@@ -142,6 +146,11 @@ form {
     text-transform: uppercase;
     letter-spacing: 2px;
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: rgb(4, 125, 0);
+    }
   }
 }
 </style>

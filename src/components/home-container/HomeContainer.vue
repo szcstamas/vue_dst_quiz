@@ -43,6 +43,11 @@ export default {};
       color: #fff;
       text-decoration: none;
       border-radius: 10px;
+      transition: background-color .2s ease-in-out;
+
+      &:hover {
+        background-color: rgb(4, 125, 0);
+      }
     }
   }
 }
