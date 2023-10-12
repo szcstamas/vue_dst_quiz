@@ -1,11 +1,6 @@
 <template>
   <main>
     <img
-      class="site-logo reign-of-giants"
-      src="@/assets/images/dont_starve_reign_of_giants_logo.webp"
-      alt="Don't Starve Reign Of Giants logo"
-    />
-    <img
       class="site-logo together"
       src="@/assets/images/dont_starve_together_logo.webp"
       alt="Don't Starve Together logo"
@@ -36,6 +31,7 @@ main {
     position: absolute;
     top: 0;
     max-width: 200px;
+    left: 22.25%;
     animation: levitating 3s ease-in-out infinite;
 
     @keyframes levitating {
@@ -49,15 +45,6 @@ main {
         transform: translateY(0%);
       }
     }
-  }
-
-  .reign-of-giants {
-    left: 30%;
-  }
-
-  .together {
-    right: 30%;
-    animation-delay: 1s;
   }
 
   section {
