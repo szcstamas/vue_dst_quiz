@@ -47,9 +47,14 @@ export default {
   },
   computed: {
     actualObjectOfOptions() {
+      //getting the first object from questions array
       const actualObject = this.questions[this.indexOfQuestion];
-      const [, ...restOfActualOptionKeyValuePairs] =
-        Object.entries(actualObject);
+
+      //making array from this object, and remove the first item (question) with slice
+      const restOfActualOptionKeyValuePairs =
+        Object.entries(actualObject).slice(1);
+
+      //creating object from this array
       const everyKeyValuePairsExceptQuestionIntoObject = Object.fromEntries(
         restOfActualOptionKeyValuePairs
       );
