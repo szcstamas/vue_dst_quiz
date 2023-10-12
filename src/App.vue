@@ -15,11 +15,28 @@ export default {
 </script>
 
 <style lang="scss">
-
 @font-face {
   font-family: "BelisaPlumilla";
   src: url("@/assets/fonts/Belisa_Plumilla.ttf");
   font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gabarito";
+  src: url("@/assets/fonts/Gabarito-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gabarito";
+  src: url("@/assets/fonts/Gabarito-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gabarito";
+  src: url("@/assets/fonts/Gabarito-Bold.ttf");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -44,7 +61,7 @@ h6 {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 55px;
 }
 h2 {
   font-size: 54px;

@@ -74,12 +74,12 @@ form {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 
   width: 500px;
   margin: auto;
 
-  h4 {
+  h1 {
     text-align: center;
   }
 
@@ -91,7 +91,9 @@ form {
     margin-right: auto;
     cursor: pointer;
 
-    font-size: 18px;
+    font-family: "Gabarito", 'Segoe UI', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
 
     input[type="radio"] {
       -webkit-appearance: none;
