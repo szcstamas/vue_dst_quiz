@@ -1,6 +1,18 @@
 <template>
-  <form @submit.prevent>
-    <h1>{{ actualQuestion }}</h1>
+  <form @submit.prevent class="question-form">
+    <h1 class="question-form__headline">{{ actualQuestion }}</h1>
+    <img
+      class="question-form__dst-logo"
+      src="@/assets/images/dont_starve_together_logo.webp"
+      alt="Don't Starve Together logo"
+    />
+    <div class="question-form__quiz-image-container">
+      <img
+        class="question-form__quiz-image-container__current-image"
+        :src="actualImageSrcOfQuestion"
+        :alt="`This is the image of the following question: ${actualQuestion}`"
+      />
+    </div>
     <label
       v-for="(value, index) in actualObjectOfOptions"
       :key="`The following number is the index of a label in our Quiz form: ${index}`"
@@ -52,7 +64,7 @@ export default {
 
       //making array from this object, and remove the first item (question) with slice
       const restOfActualOptionKeyValuePairs =
-        Object.entries(actualObject).slice(1);
+        Object.entries(actualObject).slice(2);
 
       //creating object from this array
       const everyKeyValuePairsExceptQuestionIntoObject = Object.fromEntries(
@@ -64,22 +76,72 @@ export default {
     actualQuestion() {
       return this.questions[this.indexOfQuestion].question;
     },
+    actualImageSrcOfQuestion() {
+      return this.questions[this.indexOfQuestion].questionImageSrc;
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-form {
+.question-form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 2.5rem;
+  // position: relative;
 
   width: 500px;
   margin: auto;
 
-  h1 {
+  &__dst-logo,
+  &__quiz-image-container {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 250px;
+    animation: levitating 3s ease-in-out infinite;
+
+    @keyframes levitating {
+      0% {
+        transform: translateY(0%);
+      }
+      50% {
+        transform: translateY(5%);
+      }
+      100% {
+        transform: translateY(0%);
+      }
+    }
+  }
+
+  &__dst-logo {
+    left: 23.5%;
+    max-width: 200px;
+  }
+
+  &__quiz-image-container {
+    right: 23.5%;
+    border-radius: 50%;
+    border: 3px solid #343434;
+    overflow: hidden;
+    background-color: #ffffff;
+    animation-delay: 1s;
+
+    &__current-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__headline {
+    height: min(150px, 250px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150%;
     text-align: center;
   }
 
@@ -91,7 +153,7 @@ form {
     margin-right: auto;
     cursor: pointer;
 
-    font-family: "Gabarito", 'Segoe UI', Arial, sans-serif;
+    font-family: "Gabarito", "Segoe UI", Arial, sans-serif;
     font-size: 20px;
     font-weight: 400;
 
