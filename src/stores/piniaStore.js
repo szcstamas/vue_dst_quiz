@@ -1,7 +1,10 @@
 import { defineStore } from "pinia";
 import quizImages from "./utils/quizImages";
+import { computed } from "vue";
 
 export const useQuestionStore = defineStore("useQuestionStore", () => {
+  let actualIndexOfQuestion = 0;
+
   const {
     Bearger,
     Beefalomate,
@@ -107,5 +110,11 @@ export const useQuestionStore = defineStore("useQuestionStore", () => {
     },
   ];
 
-  return { questions };
+  const getters = {
+    questionsLength: () => {
+      return questions.length;
+    },
+  };
+
+  return { questions, actualIndexOfQuestion, getters };
 });

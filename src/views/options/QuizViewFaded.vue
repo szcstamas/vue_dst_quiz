@@ -1,6 +1,8 @@
 <template>
   <section>
     <div class="wrapper">
+      <p style="margin-left:50px;">
+      </p>
       <quiz-container-faded
         v-if="actualIndexOfQuestion != questions.length"
         :questions="questions"
@@ -28,16 +30,14 @@ export default {
 
   methods: {
     jumpToNextQuestion() {
-      // Logic to increment the question index or perform other actions
-      this.actualIndexOfQuestion++;
+      useQuestionStore().actualIndexOfQuestion++;
+      this.actualIndexOfQuestion = useQuestionStore().actualIndexOfQuestion;
     },
   },
 
   computed: {
     questions() {
-      const store = useQuestionStore();
-      const questions = store.questions;
-      return questions;
+      return useQuestionStore().questions;
     },
   },
 };
