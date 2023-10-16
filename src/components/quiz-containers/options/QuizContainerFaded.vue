@@ -22,10 +22,10 @@
       <input
         type="radio"
         v-model="isOptionSelected"
-        :value="option[1]"
+        :value="option"
         name="radio"
       />
-      {{ option[1] }}
+      {{ option }}
     </label>
     <input
       type="submit"
@@ -59,10 +59,10 @@ export default {
         answer
       );
     },
-    makeOptionChoosen(answerArray, index) {
-      this.isOptionSelected = answerArray[1];
+    makeOptionChoosen(option, index) {
+      this.isOptionSelected = option;
       this.isSubmitButtonEnabled = true;
-      this.updateArrayOfGivenAnswers(answerArray[1]);
+      this.updateArrayOfGivenAnswers(option);
     },
     jumpToNextQuestionAndResetRadioButtons() {
       this.isSubmitButtonEnabled = false;
@@ -72,14 +72,7 @@ export default {
   },
   computed: {
     actualObjectOfOptions() {
-      //getting the first object from questions array
-      const actualObjectOfAnwers = this.questions[this.indexOfQuestion].answers;
-
-      //making array from this object, and remove the first item (question) with slice
-      const restOfActualOptionKeyValuePairs =
-        Object.entries(actualObjectOfAnwers).slice(1);
-
-      return restOfActualOptionKeyValuePairs;
+      return this.questions[this.indexOfQuestion].options;
     },
     actualQuestion() {
       return this.questions[this.indexOfQuestion].question;

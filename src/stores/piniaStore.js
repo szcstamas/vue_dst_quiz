@@ -24,150 +24,126 @@ export const useQuestionStore = defineStore("useQuestionStore", () => {
     {
       questionImageSrc: Mushrooms,
       question: "Which mushroom is good for your character?",
-      answers: {
-        valueOfRightAnswer: "Raw blue",
+      options: {
         firstAnswer: "Raw green",
         secondAnswer: "Cooked blue",
         thirdAnswer: "Raw blue",
       },
+      valueOfRightAnswer: "Raw blue",
     },
     {
       questionImageSrc: Statuses,
       question:
         "And what does that mushroom gives to your character besides hunger?",
-      answers: {
-        valueOfRightAnswer: "Plus health",
+      options: {
         firstAnswer: "Plus sanity",
         secondAnswer: "Plus health",
         thirdAnswer: "Both",
       },
+      valueOfRightAnswer: "Plus health",
     },
     {
       questionImageSrc: Winter,
       question: "Who is the giant of winter?",
-      answers: {
-        valueOfRightAnswer: "Deerclops",
+      options: {
         firstAnswer: "Bearger",
         secondAnswer: "Deerclops",
         thirdAnswer: "Moose",
       },
+      valueOfRightAnswer: "Deerclops",
     },
     {
       questionImageSrc: Bearger,
       question: "What does Bearger do?",
-      answers: {
-        valueOfRightAnswer: "He eats everything",
+      options: {
         firstAnswer: "He eats everything",
         secondAnswer: "He wants to destroy you aggressively",
         thirdAnswer: "He kills mobs right after he spawned",
       },
+      valueOfRightAnswer: "He eats everything",
     },
     {
       questionImageSrc: Summer,
       question: "Which is the most dangerous happening during summer?",
-      answers: {
-        valueOfRightAnswer: "Wildfires",
+      options: {
         firstAnswer: "Earthquakes",
         secondAnswer: "Wildfires",
         thirdAnswer: "Frog rains",
       },
+      valueOfRightAnswer: "Wildfires",
     },
     {
       questionImageSrc: Wetness,
       question: "What happens when you get completely wet by rains or the sea?",
-      answers: {
-        valueOfRightAnswer: "The character starts losing sanity",
+      options: {
         firstAnswer: "The character starts losing sanity",
         secondAnswer:
           "The character instantly loses a desired amount of sanity",
         thirdAnswer: "The character starts losing health",
       },
+      valueOfRightAnswer: "The character starts losing sanity",
     },
     {
       questionImageSrc: Lightningrod,
       question: "What is the lightning rod is used for?",
-      answers: {
-        valueOfRightAnswer: "Protects a specified area from lightning",
+      options: {
         firstAnswer: "Scares spiders away",
         secondAnswer: "Protects a specified area from lightning",
         thirdAnswer: "You can cook meals with it when you charge it",
       },
+      valueOfRightAnswer: "Protects a specified area from lightning",
     },
     {
       questionImageSrc: Wildfire,
       question:
         "Which structure protects your base from wildfires during summer?",
-      answers: {
-        valueOfRightAnswer: "Ice-flingomatic",
+      options: {
         firstAnswer: "Ice-box",
         secondAnswer: "Endothermic campfire",
         thirdAnswer: "Ice-flingomatic",
       },
+      valueOfRightAnswer: "Ice-flingomatic",
     },
     {
       questionImageSrc: Beefalomate,
       question: "In which seasons do beefalos mate?",
-      answers: {
-        valueOfRightAnswer: "Spring and Fall",
+      options: {
         firstAnswer: "Fall and Winter",
         secondAnswer: "Summer and Fall",
         thirdAnswer: "Spring and Fall",
       },
+      valueOfRightAnswer: "Spring and Fall",
     },
     {
       questionImageSrc: Penguins,
       question:
         "What do penguins leave behind when they leave early in spring?",
-      answers: {
-        valueOfRightAnswer: "Feathers and rotten eggs",
+      options: {
         firstAnswer: "Meat and rotten eggs",
         secondAnswer: "Only rotten eggs",
         thirdAnswer: "Feathers and rotten eggs",
       },
+      valueOfRightAnswer: "Feathers and rotten eggs",
     },
     {
       questionImageSrc: Hunger,
       question: "Which meal is the BEST for hunger?",
-      answers: {
-        valueOfRightAnswer: "Meaty stew",
+      options: {
         firstAnswer: "Meaty stew",
         secondAnswer: "Meatballs",
         thirdAnswer: "Turkey dinner",
       },
+      valueOfRightAnswer: "Meaty stew",
     },
     {
       questionImageSrc: Health,
       question: "Which meal is the BEST for health?",
-      answers: {
-        valueOfRightAnswer: "Pierogi",
+      options: {
         firstAnswer: "Blue mushroom",
         secondAnswer: "Honey ham",
         thirdAnswer: "Pierogi",
       },
-    },
-  ];
-
-  const testQuestions = [
-    {
-      questionImageSrc: Mushrooms,
-      question: "[TEST] Which mushroom is good for your character?",
-      answers: {
-        valueOfRightAnswer: "Raw blue",
-        firstAnswer: "Raw green",
-        secondAnswer: "Cooked blue",
-        thirdAnswer: "Raw blue",
-      },
-    },
-    {
-      questionImageSrc: Statuses,
-      question:
-        "[TEST] And what does that mushroom gives to your character besides hunger?",
-      answers: {
-        valueOfRightAnswer: "Plus health",
-        firstAnswer: "Plus sanity",
-        secondAnswer: "Plus health",
-        thirdAnswer: "Both",
-      },
+      valueOfRightAnswer: "Pierogi",
     },
   ];
 
@@ -179,7 +155,6 @@ export const useQuestionStore = defineStore("useQuestionStore", () => {
 
   return {
     questions,
-    testQuestions,
     actualIndexOfQuestion,
     numberOfRightAnswers,
     getters,

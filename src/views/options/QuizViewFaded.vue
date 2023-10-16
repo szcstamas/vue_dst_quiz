@@ -50,8 +50,8 @@ export default {
     arrayFilledUpWithRightAnswers() {
       const arrayOfRightAnswers = [];
 
-      this.questions.map(({ answers }) => {
-        arrayOfRightAnswers.push(answers.valueOfRightAnswer);
+      this.questions.map((questionObj) => {
+        arrayOfRightAnswers.push(questionObj.valueOfRightAnswer);
       });
 
       return arrayOfRightAnswers;
