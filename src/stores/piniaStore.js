@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 import quizImages from "./utils/quizImages";
-import { computed } from "vue";
 
 export const useQuestionStore = defineStore("useQuestionStore", () => {
   let actualIndexOfQuestion = 0;
