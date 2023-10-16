@@ -33,8 +33,6 @@ export default {
       actualIndexOfQuestion: 0,
       actualNumberOfRightAnswers: 0,
       actualArrayOfGivenAnswers: [],
-      actualCommentOfSuccessRate: "Good job!",
-      colorsOfSuccessRate: ["red", "yellow", "green"],
     };
   },
 
