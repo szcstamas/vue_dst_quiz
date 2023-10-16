@@ -14,18 +14,18 @@
       />
     </div>
     <label
-      v-for="(value, index) in actualObjectOfOptions"
+      v-for="(option, index) in actualObjectOfOptions"
       :key="`The following number is the index of a label in our Quiz form: ${index}`"
       class="form-control"
-      @click="makeOptionChoosen(value)"
+      @click="makeOptionChoosen(option, index)"
     >
       <input
         type="radio"
         v-model="isOptionSelected"
-        :value="value"
+        :value="option[1]"
         name="radio"
       />
-      {{ value }}
+      {{ option[1] }}
     </label>
     <input
       type="submit"
@@ -39,7 +39,12 @@
 
 <script>
 export default {
-  props: ["questions", "indexOfQuestion"],
+  props: [
+    "questions",
+    "indexOfQuestion",
+    "arrayOfGivenAnswers",
+    "numberOfRightAnswersFromStore",
+  ],
   data() {
     return {
       isOptionSelected: null,
@@ -47,9 +52,17 @@ export default {
     };
   },
   methods: {
-    makeOptionChoosen(value) {
-      this.isOptionSelected = value;
+    updateArrayOfGivenAnswers(answer) {
+      this.arrayOfGivenAnswers.splice(
+        this.indexOfQuestion,
+        this.increasedIndexOfActualQuestion,
+        answer
+      );
+    },
+    makeOptionChoosen(answerArray, index) {
+      this.isOptionSelected = answerArray[1];
       this.isSubmitButtonEnabled = true;
+      this.updateArrayOfGivenAnswers(answerArray[1]);
     },
     jumpToNextQuestionAndResetRadioButtons() {
       this.isSubmitButtonEnabled = false;
@@ -60,24 +73,22 @@ export default {
   computed: {
     actualObjectOfOptions() {
       //getting the first object from questions array
-      const actualObject = this.questions[this.indexOfQuestion];
+      const actualObjectOfAnwers = this.questions[this.indexOfQuestion].answers;
 
       //making array from this object, and remove the first item (question) with slice
       const restOfActualOptionKeyValuePairs =
-        Object.entries(actualObject).slice(2);
+        Object.entries(actualObjectOfAnwers).slice(1);
 
-      //creating object from this array
-      const everyKeyValuePairsExceptQuestionIntoObject = Object.fromEntries(
-        restOfActualOptionKeyValuePairs
-      );
-
-      return everyKeyValuePairsExceptQuestionIntoObject;
+      return restOfActualOptionKeyValuePairs;
     },
     actualQuestion() {
       return this.questions[this.indexOfQuestion].question;
     },
     actualImageSrcOfQuestion() {
       return this.questions[this.indexOfQuestion].questionImageSrc;
+    },
+    increasedIndexOfActualQuestion() {
+      return this.indexOfQuestion + 1;
     },
   },
 };

@@ -1,15 +1,18 @@
 <template>
   <section>
     <div class="wrapper">
-      <p style="margin-left:50px;">
-      </p>
       <quiz-container-faded
         v-if="actualIndexOfQuestion != questions.length"
         :questions="questions"
         :indexOfQuestion="actualIndexOfQuestion"
+        :arrayOfGivenAnswers="actualArrayOfGivenAnswers"
         @next-question="jumpToNextQuestion"
       />
-      <quiz-container-ended v-else />
+      <quiz-container-ended
+        v-else
+        :numberOfAllAnswers="questionsLength"
+        :numberOfRightAnswers="comparedNumberWithRightAndGivenAnswers"
+      />
     </div>
   </section>
 </template>
@@ -25,6 +28,8 @@ export default {
   data() {
     return {
       actualIndexOfQuestion: 0,
+      actualNumberOfRightAnswers: 0,
+      actualArrayOfGivenAnswers: [],
     };
   },
 
@@ -38,6 +43,29 @@ export default {
   computed: {
     questions() {
       return useQuestionStore().questions;
+    },
+    questionsLength() {
+      return useQuestionStore().getters.questionsLength();
+    },
+    arrayFilledUpWithRightAnswers() {
+      const arrayOfRightAnswers = [];
+
+      this.questions.map(({ answers }) => {
+        arrayOfRightAnswers.push(answers.valueOfRightAnswer);
+      });
+
+      return arrayOfRightAnswers;
+    },
+    comparedNumberWithRightAndGivenAnswers() {
+      this.arrayFilledUpWithRightAnswers.map((rightAnswer, index) => {
+        rightAnswer == this.actualArrayOfGivenAnswers[index]
+          ? useQuestionStore().numberOfRightAnswers++
+          : null;
+      });
+
+      this.actualNumberOfRightAnswers = useQuestionStore().numberOfRightAnswers;
+
+      return this.actualNumberOfRightAnswers;
     },
   },
 };
