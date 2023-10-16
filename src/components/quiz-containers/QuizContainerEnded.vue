@@ -1,16 +1,30 @@
 <template>
   <div class="finished-test-container">
-    <h4>You did it!</h4>
-    <p>You have just finished my fancy test!</p>
-
-    <p>Score of test:</p>
-    <h4>{{ numberOfRightAnswers }} / {{ numberOfAllAnswers }}</h4>
+    <div class="finished-test-container__box">
+      <h4>You did it!</h4>
+      <p>Number of correct answers:</p>
+      <h4>{{ numberOfRightAnswers }} / {{ numberOfAllAnswers }}</h4>
+    </div>
+    <div class="finished-test-container__box">
+      <h4 class="finished-test-container__box__success-rate" :style="{ color: colorOfSuccessRate }">
+        {{ successRateOfQuiz }}%
+      </h4>
+      <p class="finished-test-container__box__success-comment">
+        {{ commentOfSuccessRate }}
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["numberOfRightAnswers", "numberOfAllAnswers"],
+  props: [
+    "numberOfRightAnswers",
+    "numberOfAllAnswers",
+    "successRateOfQuiz",
+    "commentOfSuccessRate",
+    "colorOfSuccessRate"
+  ],
 };
 </script>
 
@@ -20,12 +34,24 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
-
+  gap: 5rem;
   text-align: center;
 
-  p {
-    font-size: 18px;
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+
+    p {
+      font-size: 18px;
+    }
+
+    &__success-rate, &__success-comment {
+      font-family: "Gabarito", "Segoe UI", Arial, sans-serif;
+      font-weight: 500;
+    }
   }
 }
 </style>

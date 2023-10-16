@@ -12,6 +12,9 @@
         v-else
         :numberOfAllAnswers="questionsLength"
         :numberOfRightAnswers="comparedNumberWithRightAndGivenAnswers"
+        :successRateOfQuiz="computedPercentageFromRightAndGivenAnswers"
+        :commentOfSuccessRate="computedDescriptionOfSuccessRate"
+        :colorOfSuccessRate="computedColourOfSuccessRate"
       />
     </div>
   </section>
@@ -30,6 +33,8 @@ export default {
       actualIndexOfQuestion: 0,
       actualNumberOfRightAnswers: 0,
       actualArrayOfGivenAnswers: [],
+      actualCommentOfSuccessRate: "Good job!",
+      colorsOfSuccessRate: ["red", "yellow", "green"],
     };
   },
 
@@ -55,6 +60,31 @@ export default {
       });
 
       return arrayOfRightAnswers;
+    },
+    computedPercentageFromRightAndGivenAnswers() {
+      return Math.floor(
+        (this.comparedNumberWithRightAndGivenAnswers /
+          this.arrayFilledUpWithRightAnswers.length) *
+          100
+      );
+    },
+    computedColourOfSuccessRate() {
+      if (this.computedPercentageFromRightAndGivenAnswers < 40) {
+        return "red";
+      } else if (this.computedPercentageFromRightAndGivenAnswers < 80) {
+        return "yellow";
+      } else {
+        return "green";
+      }
+    },
+    computedDescriptionOfSuccessRate() {
+      if (this.computedPercentageFromRightAndGivenAnswers < 40) {
+        return "Not that good! Make sure to try again!";
+      } else if (this.computedPercentageFromRightAndGivenAnswers < 80) {
+        return "You did well! But it's not perfect yet... stay on the path and its all going to be nice!";
+      } else {
+        return "Ooooh, perfect! Well done!!";
+      }
     },
     comparedNumberWithRightAndGivenAnswers() {
       this.arrayFilledUpWithRightAnswers.map((rightAnswer, index) => {
