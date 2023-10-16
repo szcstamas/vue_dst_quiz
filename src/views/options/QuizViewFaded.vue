@@ -69,21 +69,33 @@ export default {
       );
     },
     computedColourOfSuccessRate() {
-      if (this.computedPercentageFromRightAndGivenAnswers < 40) {
-        return "red";
-      } else if (this.computedPercentageFromRightAndGivenAnswers < 80) {
-        return "yellow";
-      } else {
-        return "green";
+      const percentage = this.computedPercentageFromRightAndGivenAnswers;
+
+      switch (true) {
+        case percentage < 40:
+          return "red";
+          break;
+        case percentage < 80:
+          return "yellow";
+          break;
+        default:
+          return "green";
+          break;
       }
     },
     computedDescriptionOfSuccessRate() {
-      if (this.computedPercentageFromRightAndGivenAnswers < 40) {
-        return "Not that good! Make sure to try again!";
-      } else if (this.computedPercentageFromRightAndGivenAnswers < 80) {
-        return "You did well! But it's not perfect yet... stay on the path and its all going to be nice!";
-      } else {
-        return "Ooooh, perfect! Well done!!";
+      const percentage = this.computedPercentageFromRightAndGivenAnswers;
+
+      switch (true) {
+        case percentage < 40:
+          return "Not that good! Make sure to try again!";
+          break;
+        case percentage < 80:
+          return "You did well! But it's not perfect yet... stay on the path and its all going to be nice!";
+          break;
+        default:
+          return "Ooooh, perfect! Well done!!";
+          break;
       }
     },
     comparedNumberWithRightAndGivenAnswers() {
