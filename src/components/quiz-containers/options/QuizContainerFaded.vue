@@ -183,7 +183,7 @@ export default {
         border-radius: 50%;
         transform: scale(0);
         transition: 120ms transform ease-in-out;
-        box-shadow: inset 1em 1em purple;
+        box-shadow: inset 1em 1em #8a3e00;
       }
 
       &:checked::before {

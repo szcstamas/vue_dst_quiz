@@ -16,11 +16,19 @@
         {{ currentQuestionNumber }} / {{ questionsLength }}
       </div>
       <div class="header__nav__link-container header__nav__nav-box">
-        <p>{{ $t("showDevOptions") }}</p>
-        <div class="header__nav__link-container__hidden-links">
-          <router-link to="/options">Options API</router-link>
-          <router-link to="/composition">Composition API</router-link>
-        </div>
+        <form class="header__nav__link-container__devoptions-form">
+          <label>{{ $t("showDevOptions") }}</label>
+          <input type="checkbox" @click="showDevOptions" />
+        </form>
+        <Transition name="slide-fade">
+          <div
+            v-if="isDevOptionsShown"
+            class="header__nav__link-container__hidden-links"
+          >
+            <router-link to="/options">Options API</router-link>
+            <router-link to="/composition">Composition API</router-link>
+          </div>
+        </Transition>
       </div>
     </nav>
   </header>
@@ -28,8 +36,21 @@
 
 <script>
 import { useQuestionStore } from "@/stores/piniaStore";
+import { Transition } from "vue";
 
 export default {
+  data() {
+    return {
+      isDevOptionsShown: false,
+    };
+  },
+
+  methods: {
+    showDevOptions() {
+      this.isDevOptionsShown = !this.isDevOptionsShown;
+    },
+  },
+
   computed: {
     actualPercent() {
       return (
@@ -136,15 +157,64 @@ export default {
     }
 
     &__link-container {
-      &:hover {
-        .header__nav__link-container__hidden-links {
-          opacity: 1;
-          visibility: visible;
-        }
+      .slide-fade-enter-active {
+        transition: all 0.3s ease-out;
+      }
+
+      .slide-fade-leave-active {
+        transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+      }
+
+      .slide-fade-enter-from,
+      .slide-fade-leave-to {
+        transform: translateY(-20px);
+        opacity: 0;
       }
 
       p {
         cursor: pointer;
+      }
+
+      &__devoptions-form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        input[type="checkbox"] {
+          cursor: pointer;
+          -webkit-appearance: none;
+          appearance: none;
+          background-color: #fff;
+
+          display: grid;
+          place-content: center;
+
+          font: inherit;
+
+          color: transparent;
+          background: transparent;
+
+          width: 1.8rem;
+          height: 1.8rem;
+          border: 4px solid #ffffff;
+          border-radius: 50%;
+          transform: translateY(-0.075em);
+        }
+
+        input[type="checkbox"]::before {
+          content: "";
+          width: 1.3rem;
+          height: 1.3rem;
+          border-radius: 50%;
+          transform: scale(0);
+          transition: .2s transform ease-in-out;
+          box-shadow: inset 1rem 1rem #8a3e00;
+        }
+
+        input[type="checkbox"]:checked::before {
+          transform: scale(1);
+        }
       }
 
       &__hidden-links {
@@ -152,11 +222,9 @@ export default {
         background-color: #343434;
         border-radius: 20px;
         position: absolute;
-        top: 50%;
+        top: 100%;
         right: 18%;
-        transform: translateY(0%);
-        opacity: 0;
-        visibility: hidden;
+        z-index: 100;
         transition: all 0.25s ease-in-out;
 
         display: flex;
