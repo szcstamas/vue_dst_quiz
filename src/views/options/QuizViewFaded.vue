@@ -2,8 +2,8 @@
   <section>
     <div class="wrapper">
       <quiz-container-faded
-        v-if="actualIndexOfQuestion != questions.length"
-        :questions="questions"
+        v-if="actualIndexOfQuestion != shuffledArrayOfQuestions.length"
+        :questions="shuffledArrayOfQuestions"
         :indexOfQuestion="actualIndexOfQuestion"
         :arrayOfGivenAnswers="actualArrayOfGivenAnswers"
         @next-question="jumpToNextQuestion"
@@ -24,6 +24,7 @@
 import QuizContainerFaded from "@/components/quiz-containers/options/QuizContainerFaded.vue";
 import QuizContainerEnded from "@/components/quiz-containers/QuizContainerEnded.vue";
 import { useQuestionStore } from "@/stores/piniaStore";
+import shuffleArray from "@/views/utils/shuffleArray.js";
 
 export default {
   components: { QuizContainerEnded, QuizContainerFaded },
@@ -49,6 +50,9 @@ export default {
     },
     questionsLength() {
       return useQuestionStore().getters.questionsLength();
+    },
+    shuffledArrayOfQuestions() {
+      return shuffleArray(this.questions);
     },
     commentsOfSuccessDescription() {
       return useQuestionStore().commentsOfSuccessDescription;
