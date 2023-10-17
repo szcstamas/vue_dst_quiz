@@ -1,10 +1,12 @@
 <template>
   <header class="header">
     <nav class="header__nav">
-      <router-link to="/" class="header__nav__homepage-link"
+      <router-link
+        to="/"
+        class="header__nav__homepage-link header__nav__nav-box"
         >Don't Starve Quiz</router-link
       >
-      <div class="header__nav__quiz-scrollbar">
+      <div class="header__nav__quiz-scrollbar header__nav__nav-box">
         <div
           class="header__nav__quiz-scrollbar__fillment"
           :style="{ width: `${actualPercent}%` }"
@@ -13,8 +15,8 @@
       <div class="header__nav__quiz-counter">
         {{ currentQuestionNumber }} / {{ questionsLength }}
       </div>
-      <div class="header__nav__link-container">
-        <p>{{ $t('showDevOptions') }}</p>
+      <div class="header__nav__link-container header__nav__nav-box">
+        <p>{{ $t("showDevOptions") }}</p>
         <div class="header__nav__link-container__hidden-links">
           <router-link to="/options">Options API</router-link>
           <router-link to="/composition">Composition API</router-link>
@@ -70,6 +72,20 @@ export default {
     width: 100%;
     max-width: 1440px;
 
+    &__nav-box {
+      flex: 1;
+      display: flex;
+
+      &:first-child {
+        margin-left: auto;
+      }
+
+      &:last-child {
+        margin-right: auto;
+        justify-content: right;
+      }
+    }
+
     &__quiz-scrollbar {
       position: relative;
       background-color: #939393;
@@ -99,11 +115,11 @@ export default {
       background-color: #343434;
       border: 3px solid #fff;
       border-radius: 50%;
-      padding-top: .25rem;
+      padding-top: 0.25rem;
 
       top: 75%;
       left: 50%;
-      transform: translateX(-25%);
+      transform: translateX(-50%);
 
       display: flex;
       justify-content: center;
