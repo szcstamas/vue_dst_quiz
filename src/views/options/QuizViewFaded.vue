@@ -50,6 +50,12 @@ export default {
     questionsLength() {
       return useQuestionStore().getters.questionsLength();
     },
+    commentsOfSuccessDescription() {
+      return useQuestionStore().commentsOfSuccessDescription;
+    },
+    coloursOfSuccessRate() {
+      return useQuestionStore().coloursOfSuccessRate;
+    },
     arrayFilledUpWithRightAnswers() {
       const arrayOfRightAnswers = [];
 
@@ -71,13 +77,13 @@ export default {
 
       switch (true) {
         case percentage < 40:
-          return "red";
+          return this.coloursOfSuccessRate.below40;
           break;
         case percentage < 80:
-          return "yellow";
+          return this.coloursOfSuccessRate.below80;
           break;
         default:
-          return "green";
+          return this.coloursOfSuccessRate.above80;
           break;
       }
     },
@@ -86,13 +92,13 @@ export default {
 
       switch (true) {
         case percentage < 40:
-          return "Not that good! Make sure to try again!";
+          return this.commentsOfSuccessDescription.below40;
           break;
         case percentage < 80:
-          return "You did well! But it's not perfect yet... stay on the path and its all going to be nice!";
+          return this.commentsOfSuccessDescription.below80;
           break;
         default:
-          return "Ooooh, perfect! Well done!!";
+          return this.commentsOfSuccessDescription.above80;
           break;
       }
     },

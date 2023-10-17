@@ -1,0 +1,123 @@
+{
+  "showDevOptions": "Show DEV options",
+  "welcomeHeadline": "Hello! Shall we begin?",
+  "welcomeCTA": "Of course, let's go!",
+  "nextQuizQuestionCtaText": "Next question",
+  "quizEnded": "You did it!",
+  "numberOfCorrectAnswers": "Number of correct answers:",
+  "commentsOfSuccessDescription": {
+    "below40": "Not that good! Make sure to try again!",
+    "below80": "You did well! But it's not perfect yet... stay on the path and its all going to be nice!",
+    "above80": "Ooooh, perfect! Well done!"
+  },
+  "questions": [
+    {
+      "question": "Which mushroom is good for your character?",
+      "options": {
+        "firstAnswer": "Raw green",
+        "secondAnswer": "Cooked blue",
+        "thirdAnswer": "Raw blue"
+      },
+      "valueOfRightAnswer": "Raw blue"
+    },
+    {
+      "question": "And what does that mushroom gives to your character besides hunger?",
+      "options": {
+        "firstAnswer": "Plus sanity",
+        "secondAnswer": "Plus health",
+        "thirdAnswer": "Both"
+      },
+      "valueOfRightAnswer": "Plus health"
+    },
+    {
+      "question": "Who is the giant of winter?",
+      "options": {
+        "firstAnswer": "Bearger",
+        "secondAnswer": "Deerclops",
+        "thirdAnswer": "Moose"
+      },
+      "valueOfRightAnswer": "Deerclops"
+    },
+    {
+      "question": "What does Bearger do?",
+      "options": {
+        "firstAnswer": "He eats everything",
+        "secondAnswer": "He wants to destroy you aggressively",
+        "thirdAnswer": "He kills mobs right after he spawned"
+      },
+      "valueOfRightAnswer": "He eats everything"
+    },
+    {
+      "question": "Which is the most dangerous happening during summer?",
+      "options": {
+        "firstAnswer": "Earthquakes",
+        "secondAnswer": "Wildfires",
+        "thirdAnswer": "Frog rains"
+      },
+      "valueOfRightAnswer": "Wildfires"
+    },
+    {
+      "question": "What happens when you get completely wet by rains or the sea?",
+      "options": {
+        "firstAnswer": "The character starts losing sanity",
+        "secondAnswer": "The character instantly loses a desired amount of sanity",
+        "thirdAnswer": "The character starts losing health"
+      },
+      "valueOfRightAnswer": "The character starts losing sanity"
+    },
+    {
+      "question": "What is the lightning rod is used for?",
+      "options": {
+        "firstAnswer": "Scares spiders away",
+        "secondAnswer": "Protects a specified area from lightning",
+        "thirdAnswer": "You can cook meals with it when you charge it"
+      },
+      "valueOfRightAnswer": "Protects a specified area from lightning"
+    },
+    {
+      "question": "Which structure protects your base from wildfires during summer?",
+      "options": {
+        "firstAnswer": "Ice-box",
+        "secondAnswer": "Endothermic campfire",
+        "thirdAnswer": "Ice-flingomatic"
+      },
+      "valueOfRightAnswer": "Ice-flingomatic"
+    },
+    {
+      "question": "In which seasons do beefalos mate?",
+      "options": {
+        "firstAnswer": "Fall and Winter",
+        "secondAnswer": "Summer and Fall",
+        "thirdAnswer": "Spring and Fall"
+      },
+      "valueOfRightAnswer": "Spring and Fall"
+    },
+    {
+      "question": "What do penguins leave behind when they leave early in spring?",
+      "options": {
+        "firstAnswer": "Meat and rotten eggs",
+        "secondAnswer": "Only rotten eggs",
+        "thirdAnswer": "Feathers and rotten eggs"
+      },
+      "valueOfRightAnswer": "Feathers and rotten eggs"
+    },
+    {
+      "question": "Which meal is the BEST for hunger?",
+      "options": {
+        "firstAnswer": "Meaty stew",
+        "secondAnswer": "Meatballs",
+        "thirdAnswer": "Turkey dinner"
+      },
+      "valueOfRightAnswer": "Meaty stew"
+    },
+    {
+      "question": "Which meal is the BEST for health?",
+      "options": {
+        "firstAnswer": "Blue mushroom",
+        "secondAnswer": "Honey ham",
+        "thirdAnswer": "Pierogi"
+      },
+      "valueOfRightAnswer": "Pierogi"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 <template>
   <div class="finished-test-container">
     <div class="finished-test-container__box">
-      <h4>You did it!</h4>
-      <p>Number of correct answers:</p>
+      <h4>{{ $t('quizEnded') }}</h4>
+      <p>{{ $t('numberOfCorrectAnswers') }}</p>
       <h4>{{ numberOfRightAnswers }} / {{ numberOfAllAnswers }}</h4>
     </div>
     <div class="finished-test-container__box">

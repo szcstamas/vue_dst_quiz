@@ -14,7 +14,7 @@
         {{ currentQuestionNumber }} / {{ questionsLength }}
       </div>
       <div class="header__nav__link-container">
-        <p>Show DEV options</p>
+        <p>{{ $t('showDevOptions') }}</p>
         <div class="header__nav__link-container__hidden-links">
           <router-link to="/options">Options API</router-link>
           <router-link to="/composition">Composition API</router-link>

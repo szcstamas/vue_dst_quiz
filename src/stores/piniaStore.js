@@ -1,9 +1,23 @@
 import { defineStore } from "pinia";
 import quizImages from "./utils/quizImages";
+import { useI18n } from "vue-i18n";
 
 export const useQuestionStore = defineStore("useQuestionStore", () => {
   let actualIndexOfQuestion = 0;
   let numberOfRightAnswers = 0;
+  const { t } = useI18n();
+
+  const commentsOfSuccessDescription = {
+    below40: t("commentsOfSuccessDescription.below40"),
+    below80: t("commentsOfSuccessDescription.below80"),
+    above80: t("commentsOfSuccessDescription.above80"),
+  };
+
+  const coloursOfSuccessRate = {
+    below40: "#b82e00",
+    below80: "#dd7100",
+    above80: "#4ea100",
+  };
 
   const {
     Bearger,
@@ -23,127 +37,123 @@ export const useQuestionStore = defineStore("useQuestionStore", () => {
   const questions = [
     {
       questionImageSrc: Mushrooms,
-      question: "Which mushroom is good for your character?",
+      question: t("questions[0].question"),
       options: {
-        firstAnswer: "Raw green",
-        secondAnswer: "Cooked blue",
-        thirdAnswer: "Raw blue",
+        firstAnswer: t("questions[0].options.firstAnswer"),
+        secondAnswer: t("questions[0].options.secondAnswer"),
+        thirdAnswer: t("questions[0].options.thirdAnswer"),
       },
-      valueOfRightAnswer: "Raw blue",
+      valueOfRightAnswer: t("questions[0].options.thirdAnswer"),
     },
     {
       questionImageSrc: Statuses,
-      question:
-        "And what does that mushroom gives to your character besides hunger?",
+      question: t("questions[1].question"),
       options: {
-        firstAnswer: "Plus sanity",
-        secondAnswer: "Plus health",
-        thirdAnswer: "Both",
+        firstAnswer: t("questions[1].options.firstAnswer"),
+        secondAnswer: t("questions[1].options.secondAnswer"),
+        thirdAnswer: t("questions[1].options.thirdAnswer"),
       },
-      valueOfRightAnswer: "Plus health",
+      valueOfRightAnswer: t("questions[1].options.secondAnswer"),
     },
     {
       questionImageSrc: Winter,
-      question: "Who is the giant of winter?",
+      question: t("questions[2].question"),
       options: {
-        firstAnswer: "Bearger",
-        secondAnswer: "Deerclops",
-        thirdAnswer: "Moose",
+        firstAnswer: t("questions[2].options.firstAnswer"),
+        secondAnswer: t("questions[2].options.secondAnswer"),
+        thirdAnswer: t("questions[2].options.thirdAnswer"),
       },
-      valueOfRightAnswer: "Deerclops",
+      valueOfRightAnswer: t("questions[2].options.secondAnswer"),
     },
     {
       questionImageSrc: Bearger,
-      question: "What does Bearger do?",
+      question: t("questions[3].question"),
       options: {
-        firstAnswer: "He eats everything",
-        secondAnswer: "He wants to destroy you aggressively",
-        thirdAnswer: "He kills mobs right after he spawned",
+        firstAnswer: t("questions[3].options.firstAnswer"),
+        secondAnswer: t("questions[3].options.secondAnswer"),
+        thirdAnswer: t("questions[3].options.thirdAnswer"),
       },
-      valueOfRightAnswer: "He eats everything",
+      valueOfRightAnswer: t("questions[3].options.firstAnswer"),
     },
     {
       questionImageSrc: Summer,
-      question: "Which is the most dangerous happening during summer?",
+      question: t("questions[4].question"),
       options: {
-        firstAnswer: "Earthquakes",
-        secondAnswer: "Wildfires",
-        thirdAnswer: "Frog rains",
+        firstAnswer: t("questions[4].options.firstAnswer"),
+        secondAnswer: t("questions[4].options.secondAnswer"),
+        thirdAnswer: t("questions[4].options.thirdAnswer"),
       },
-      valueOfRightAnswer: "Wildfires",
+      valueOfRightAnswer: t("questions[4].options.secondAnswer"),
     },
     {
       questionImageSrc: Wetness,
-      question: "What happens when you get completely wet by rains or the sea?",
+      question: t("questions[5].question"),
       options: {
-        firstAnswer: "The character starts losing sanity",
-        secondAnswer:
-          "The character instantly loses a desired amount of sanity",
-        thirdAnswer: "The character starts losing health",
+        firstAnswer: t("questions[5].options.firstAnswer"),
+        secondAnswer: t("questions[5].options.secondAnswer"),
+        thirdAnswer: t("questions[5].options.thirdAnswer"),
       },
-      valueOfRightAnswer: "The character starts losing sanity",
+      valueOfRightAnswer: t("questions[5].options.firstAnswer"),
     },
     {
       questionImageSrc: Lightningrod,
-      question: "What is the lightning rod is used for?",
+      question: t("questions[6].question"),
       options: {
-        firstAnswer: "Scares spiders away",
-        secondAnswer: "Protects a specified area from lightning",
-        thirdAnswer: "You can cook meals with it when you charge it",
+        firstAnswer: t("questions[6].options.firstAnswer"),
+        secondAnswer: t("questions[6].options.secondAnswer"),
+        thirdAnswer: t("questions[6].options.thirdAnswer"),
       },
-      valueOfRightAnswer: "Protects a specified area from lightning",
+      valueOfRightAnswer: t("questions[6].options.secondAnswer"),
     },
     {
       questionImageSrc: Wildfire,
-      question:
-        "Which structure protects your base from wildfires during summer?",
+      question: t("questions[7].question"),
       options: {
-        firstAnswer: "Ice-box",
-        secondAnswer: "Endothermic campfire",
-        thirdAnswer: "Ice-flingomatic",
+        firstAnswer: t("questions[7].options.firstAnswer"),
+        secondAnswer: t("questions[7].options.secondAnswer"),
+        thirdAnswer: t("questions[7].options.thirdAnswer"),
       },
-      valueOfRightAnswer: "Ice-flingomatic",
+      valueOfRightAnswer: t("questions[7].options.thirdAnswer"),
     },
     {
       questionImageSrc: Beefalomate,
-      question: "In which seasons do beefalos mate?",
+      question: t("questions[8].question"),
       options: {
-        firstAnswer: "Fall and Winter",
-        secondAnswer: "Summer and Fall",
-        thirdAnswer: "Spring and Fall",
+        firstAnswer: t("questions[8].options.firstAnswer"),
+        secondAnswer: t("questions[8].options.secondAnswer"),
+        thirdAnswer: t("questions[8].options.thirdAnswer"),
       },
-      valueOfRightAnswer: "Spring and Fall",
+      valueOfRightAnswer: t("questions[8].options.thirdAnswer"),
     },
     {
       questionImageSrc: Penguins,
-      question:
-        "What do penguins leave behind when they leave early in spring?",
+      question: t("questions[9].question"),
       options: {
-        firstAnswer: "Meat and rotten eggs",
-        secondAnswer: "Only rotten eggs",
-        thirdAnswer: "Feathers and rotten eggs",
+        firstAnswer: t("questions[9].options.firstAnswer"),
+        secondAnswer: t("questions[9].options.secondAnswer"),
+        thirdAnswer: t("questions[9].options.thirdAnswer"),
       },
-      valueOfRightAnswer: "Feathers and rotten eggs",
+      valueOfRightAnswer: t("questions[9].options.thirdAnswer"),
     },
     {
       questionImageSrc: Hunger,
-      question: "Which meal is the BEST for hunger?",
+      question: t("questions[10].question"),
       options: {
-        firstAnswer: "Meaty stew",
-        secondAnswer: "Meatballs",
-        thirdAnswer: "Turkey dinner",
+        firstAnswer: t("questions[10].options.firstAnswer"),
+        secondAnswer: t("questions[10].options.secondAnswer"),
+        thirdAnswer: t("questions[10].options.thirdAnswer"),
       },
-      valueOfRightAnswer: "Meaty stew",
+      valueOfRightAnswer: t("questions[10].options.firstAnswer"),
     },
     {
       questionImageSrc: Health,
-      question: "Which meal is the BEST for health?",
+      question: t("questions[11].question"),
       options: {
-        firstAnswer: "Blue mushroom",
-        secondAnswer: "Honey ham",
-        thirdAnswer: "Pierogi",
+        firstAnswer: t("questions[11].options.firstAnswer"),
+        secondAnswer: t("questions[11].options.secondAnswer"),
+        thirdAnswer: t("questions[11].options.thirdAnswer"),
       },
-      valueOfRightAnswer: "Pierogi",
+      valueOfRightAnswer: t("questions[11].options.thirdAnswer"),
     },
   ];
 
@@ -157,6 +167,8 @@ export const useQuestionStore = defineStore("useQuestionStore", () => {
     questions,
     actualIndexOfQuestion,
     numberOfRightAnswers,
+    commentsOfSuccessDescription,
+    coloursOfSuccessRate,
     getters,
   };
 });

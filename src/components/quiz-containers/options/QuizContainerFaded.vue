@@ -31,8 +31,8 @@
       type="submit"
       :disabled="!isSubmitButtonEnabled"
       :class="{ disabled: !isSubmitButtonEnabled }"
+      :value="$t('nextQuizQuestionCtaText')"
       @click="jumpToNextQuestionAndResetRadioButtons()"
-      value="Next question"
     />
   </form>
 </template>

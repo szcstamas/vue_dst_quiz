@@ -1,9 +1,9 @@
 <template>
   <section>
     <div class="home-wrapper">
-      <h1>Szia! Indulhat a játék?</h1>
+      <h1>{{ $t('welcomeHeadline') }}</h1>
       <div class="home-wrapper__button-container">
-        <router-link to="/options">Igen-igen, kezdjük már!</router-link>
+        <router-link to="/options">{{ $t('welcomeCTA') }}</router-link>
       </div>
     </div>
   </section>

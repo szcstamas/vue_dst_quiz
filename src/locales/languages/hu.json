@@ -1,0 +1,123 @@
+{
+  "showDevOptions": "Fejlesztői opciók",
+  "welcomeHeadline": "Szia! Kezdhetjük a játékot?",
+  "welcomeCTA": "Persze, gyerünk már!",
+  "nextQuizQuestionCtaText": "Következő kérdés",
+  "quizEnded": "Megcsináltad!",
+  "numberOfCorrectAnswers": "Helyes válaszok száma:",
+  "commentsOfSuccessDescription": {
+    "below40": "Nem olyan jó! Próbáld újra!",
+    "below80": "Jól csináltad! De még nem tökéletes... tanulj tovább, és minden rendben lesz!",
+    "above80": "Tökéletes! Nagyon ügyes vagy!"
+  },
+  "questions": [
+    {
+      "question": "Melyik gomba tesz jót a karakterednek?",
+      "options": {
+        "firstAnswer": "Nyers zöld",
+        "secondAnswer": "Sült kék",
+        "thirdAnswer": "Nyers kék"
+      },
+      "valueOfRightAnswer": "Nyers kék"
+    },
+    {
+      "question": "És milyen pluszt ad ez a gomba?",
+      "options": {
+        "firstAnswer": "Plusz józan ész",
+        "secondAnswer": "Plusz életerő",
+        "thirdAnswer": "Mindkettő"
+      },
+      "valueOfRightAnswer": "Plusz életerő"
+    },
+    {
+      "question": "Ki a tél óriása?",
+      "options": {
+        "firstAnswer": "Bearger",
+        "secondAnswer": "Deerclops",
+        "thirdAnswer": "Moose"
+      },
+      "valueOfRightAnswer": "Deerclops"
+    },
+    {
+      "question": "Hogyan viselkedik Bearger?",
+      "options": {
+        "firstAnswer": "Mindent megeszik",
+        "secondAnswer": "Agresszívan ki akarja nyírni a játékost",
+        "thirdAnswer": "Minden élőlényt megpróbál kinyírni"
+      },
+      "valueOfRightAnswer": "Mindent megeszik"
+    },
+    {
+      "question": "Mi a legveszélyesebb a nyárban?",
+      "options": {
+        "firstAnswer": "Földrengés",
+        "secondAnswer": "Erdőtűz",
+        "thirdAnswer": "Béka-eső"
+      },
+      "valueOfRightAnswer": "Erdőtűz"
+    },
+    {
+      "question": "Mi történik ha teljesen elázol?",
+      "options": {
+        "firstAnswer": "A karakter elkezd veszíteni a józan eszéből",
+        "secondAnswer": "A karakter azonnal veszít egy nagy részt a józan eszéből",
+        "thirdAnswer": "A karakter elkezd veszíteni az életerejéből"
+      },
+      "valueOfRightAnswer": "A karakter elkezd veszíteni a józan eszéből"
+    },
+    {
+      "question": "Mire használjuk a villámhárítót?",
+      "options": {
+        "firstAnswer": "Elijeszti a pókokat",
+        "secondAnswer": "Megvéd egy bizonyos területet a villámlástól",
+        "thirdAnswer": "Ha fel van töltve, sütni lehet rajta"
+      },
+      "valueOfRightAnswer": "Megvéd egy bizonyos területet a villámlástól"
+    },
+    {
+      "question": "Melyik építmény védi meg a bázist az erdőtüzektől?",
+      "options": {
+        "firstAnswer": "Ice-box",
+        "secondAnswer": "Endotermikus tábortűz",
+        "thirdAnswer": "Ice-flingomatic"
+      },
+      "valueOfRightAnswer": "Ice-flingomatic"
+    },
+    {
+      "question": "Melyik szezonban párzanak a beefalók?",
+      "options": {
+        "firstAnswer": "Ősz és tél",
+        "secondAnswer": "Nyár és ősz",
+        "thirdAnswer": "Tavasz és ősz"
+      },
+      "valueOfRightAnswer": "Tavasz és ősz"
+    },
+    {
+      "question": "Mit hagynak maguk után a pingvinek?",
+      "options": {
+        "firstAnswer": "Húst és romlott tojásokat",
+        "secondAnswer": "Csak romlott tojásokat",
+        "thirdAnswer": "Tollakat és romlott tojásokat"
+      },
+      "valueOfRightAnswer": "Tollakat és romlott tojásokat"
+    },
+    {
+      "question": "Melyik menü a LEGJOBB az éhségre?",
+      "options": {
+        "firstAnswer": "Meaty stew",
+        "secondAnswer": "Meatballs",
+        "thirdAnswer": "Turkey dinner"
+      },
+      "valueOfRightAnswer": "Meaty stew"
+    },
+    {
+      "question": "Melyik menü a LEGJOBB az életerőre?",
+      "options": {
+        "firstAnswer": "Kék gomba",
+        "secondAnswer": "Honey ham",
+        "thirdAnswer": "Pierogi"
+      },
+      "valueOfRightAnswer": "Pierogi"
+    }
+  ]
+}
