@@ -4,7 +4,7 @@ import hu from "./languages/hu.json";
 
 const i18n = createI18n({
   legacy: false,
-  locale: "hu",
+  locale: "en",
   messages: {
     en,
     hu,
