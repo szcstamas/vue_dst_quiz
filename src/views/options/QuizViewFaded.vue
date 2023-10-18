@@ -46,7 +46,7 @@ export default {
 
   computed: {
     questions() {
-      return useQuestionStore().questions;
+      return useQuestionStore().questions();
     },
     questionsLength() {
       return useQuestionStore().getters.questionsLength();
@@ -55,7 +55,7 @@ export default {
       return shuffleArray(this.questions);
     },
     commentsOfSuccessDescription() {
-      return useQuestionStore().commentsOfSuccessDescription;
+      return useQuestionStore().commentsOfSuccessDescription();
     },
     coloursOfSuccessRate() {
       return useQuestionStore().coloursOfSuccessRate;
